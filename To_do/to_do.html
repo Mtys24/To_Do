@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>To_do_time</title>
+</head>
+
+<body class="font-[Poppins] min-h-screen flex items-center justify-center p-4 transition-colors duration-500 
+bg-gray-100 text-gray-900 
+dark:bg-gradient-to-br dark:from-slate-900 dark:via-indigo-900 dark:to-slate-800 dark:text-white">
+
+<div class="w-full max-w-md p-6 sm:p-8 rounded-3xl shadow-2xl border transition-all duration-500
+bg-white text-gray-900 border-gray-200
+dark:bg-white/10 dark:text-white dark:border-white/10 backdrop-blur-xl">
+
+    <div class="flex justify-end mb-4">
+        <button id="themeToggle"
+            class="px-3 py-1 rounded-lg bg-indigo-500 text-white text-sm hover:bg-indigo-600 transition">
+            🌙
+        </button>
+    </div>
+
+    <h1 class="text-2xl sm:text-3xl font-bold text-center mb-2 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+        To do
+    </h1>
+
+    <p id="taskCounter" class="text-sm text-center mb-2 opacity-70">
+        0 tasks
+    </p>
+
+    <!-- PROGRESS -->
+    <div class="w-full bg-gray-200 dark:bg-white/20 h-2 rounded-full mb-4 overflow-hidden">
+        <div id="progressBar" class="h-2 bg-indigo-500 transition-all duration-500 w-0"></div>
+    </div>
+
+    <div class="flex gap-2 mb-4">
+        <input type="text" id="taskInput" placeholder="Escriba una tarea..."
+            class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400
+            bg-gray-50 dark:bg-white/10 dark:border-white/20 transition">
+
+        <button id="addBtn"
+            class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition">
+            Añadir
+        </button>
+    </div>
+
+    <ul id="taskList" class="space-y-2 mb-4"></ul>
+
+    <div class="flex flex-wrap justify-between items-center gap-3 text-sm mt-4">
+        <div class="flex gap-3 flex-wrap">
+            <button id="filterAll" class="filter-btn font-semibold">Todas</button>
+            <button id="filterActive" class="filter-btn">Activas</button>
+            <button id="filterCompleted" class="filter-btn">Completadas</button>
+        </div>
+
+        <button id="clearCompleted" class="text-red-400 hover:text-red-500 transition">
+            Limpiar
+        </button>
+    </div>
+
+</div>
+
+<script src="to_do.js"></script>
+</body>
+</html>
